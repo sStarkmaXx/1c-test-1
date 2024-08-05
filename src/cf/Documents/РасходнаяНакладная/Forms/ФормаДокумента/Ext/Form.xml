@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.15">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="Номер" id="1">
+			<DataPath>Объект.Number</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Дата" id="4">
+			<DataPath>Объект.Date</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="Склад" id="7">
+			<DataPath>Объект.Склад</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="СкладКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="СкладРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<InputField name="Сумма" id="32">
+			<DataPath>Объект.Сумма</DataPath>
+			<ContextMenu name="СуммаКонтекстноеМеню" id="33"/>
+			<ExtendedTooltip name="СуммаРасширеннаяПодсказка" id="34"/>
+		</InputField>
+		<Table name="ТоварыДляСписания" id="10">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.ТоварыДляСписания</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТоварыДляСписанияКонтекстноеМеню" id="11"/>
+			<AutoCommandBar name="ТоварыДляСписанияКоманднаяПанель" id="12"/>
+			<ExtendedTooltip name="ТоварыДляСписанияРасширеннаяПодсказка" id="13"/>
+			<SearchStringAddition name="ТоварыДляСписанияСтрокаПоиска" id="14">
+				<AdditionSource>
+					<Item>ТоварыДляСписания</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТоварыДляСписанияСтрокаПоискаКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="ТоварыДляСписанияСтрокаПоискаРасширеннаяПодсказка" id="16"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТоварыДляСписанияСостояниеПросмотра" id="17">
+				<AdditionSource>
+					<Item>ТоварыДляСписания</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТоварыДляСписанияСостояниеПросмотраКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="ТоварыДляСписанияСостояниеПросмотраРасширеннаяПодсказка" id="19"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТоварыДляСписанияУправлениеПоиском" id="20">
+				<AdditionSource>
+					<Item>ТоварыДляСписания</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТоварыДляСписанияУправлениеПоискомКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="ТоварыДляСписанияУправлениеПоискомРасширеннаяПодсказка" id="22"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnChange">ТоварыДляСписанияПриИзменении</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="ТоварыДляСписанияНомерСтроки" id="23">
+					<DataPath>Объект.ТоварыДляСписания.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТоварыДляСписанияНомерСтрокиКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ТоварыДляСписанияНомерСтрокиРасширеннаяПодсказка" id="25"/>
+				</LabelField>
+				<InputField name="ТоварыДляСписанияНаменованиеТовара" id="26">
+					<DataPath>Объект.ТоварыДляСписания.НаименованиеТовара</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТоварыДляСписанияНаменованиеТовараКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ТоварыДляСписанияНаменованиеТовараРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="ТоварыДляСписанияКоличество" id="29">
+					<DataPath>Объект.ТоварыДляСписания.Количество</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТоварыДляСписанияКоличествоКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ТоварыДляСписанияКоличествоРасширеннаяПодсказка" id="31"/>
+					<Events>
+						<Event name="OnChange">ТоварыДляСписанияКоличествоПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ТоварыДляСписанияЦена" id="35">
+					<DataPath>Объект.ТоварыДляСписания.Цена</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТоварыДляСписанияЦенаКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ТоварыДляСписанияЦенаРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="ТоварыДляСписанияСумма" id="38">
+					<DataPath>Объект.ТоварыДляСписания.Сумма</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТоварыДляСписанияСуммаКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ТоварыДляСписанияСуммаРасширеннаяПодсказка" id="40"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.РасходнаяНакладная</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+</Form>
